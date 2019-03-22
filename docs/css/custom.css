@@ -1,0 +1,23 @@
+#header {
+    background: #004555;
+
+}
+
+/* Background color of the menu */
+#sidebar {
+  background-color: #F7F7F7;
+}
+
+/* Background color of the menu, when clicked */
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+  background-color: #4D726E;
+  color: #FE641A;
+}
+
+/* Color of all links, including arrows to get to previous and next pages */
+a {
+    color: #FE641A;
+}
+a:hover {
+   color: #FE641A;
+}
