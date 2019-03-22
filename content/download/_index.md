@@ -1,13 +1,13 @@
 +++
-toc = "false"
+
 title = "Download"
 date = 2019-03-22T23:34:53+05:30
 weight = 5
 chapter = true
-pre = "<b>X. </b>"
+
 +++
 
-### Download Amanda
+# Download Amanda
 PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE ''AS-IS''. UMD and the Amanda contributers are making this work available so that other people can use it. This software is in production use at a number of sites around the world, but we make no warranties that it will work for you. There is no free support available other than users helping each other on the [amanda-users mailing list](../_mail). Other support options [can be found here](../_cs).
 
 #### Binary packages
