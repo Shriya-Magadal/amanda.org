@@ -4,7 +4,7 @@ title = "Copyright"
 date = 2019-03-22T23:34:03+05:30
 weight = 5
 chapter = true
-pre = "<b>X. </b>"
+
 +++
 
 # Amanda Copyright
