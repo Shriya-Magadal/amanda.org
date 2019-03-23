@@ -1,7 +1,7 @@
 +++
 title = "     Support"
 date = 2019-03-23T11:31:44+05:30
-weight = 5
+weight = 6
 chapter = true
 pre = "<i class='fas fa-headset'></i>"
 +++

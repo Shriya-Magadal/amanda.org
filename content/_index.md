@@ -4,7 +4,7 @@ date: 2019-03-22T23:18:47+05:30
 draft: false
 ---
 
-*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](/to_do) to contribute to this site.</sub></sub>*
 
 <span id="text_in_focus">
 # What is Amanda?

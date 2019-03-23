@@ -1,7 +1,7 @@
 +++
 title = "     Mailing List"
 date = 2019-03-23T10:20:00+05:30
-weight = 5
+weight = 7
 chapter = true
 pre = "<i class='far fa-envelope'></i>"
 +++
