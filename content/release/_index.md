@@ -8,6 +8,7 @@ pre = "<i class='far fa-file-alt'></i>"
 +++
 
 # Release Notes
+---
 
 [Version 3.5](/release/v35)
 
