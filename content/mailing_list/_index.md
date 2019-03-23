@@ -7,13 +7,12 @@ chapter = true
 +++
 
 # Where to get more information about Amanda
-
-
+---
 There are several channels available for Amanda support:
 
 -   Amanda mailing lists (see below)
 -   [Amanda forums](http://forums.zmanda.com)
--   [#amanda on IRC](_irc)
+-   [#amanda on IRC](../irc)
 
 NOTE: You must be subscribed to a mailing list to send mail to it. Also,
 the address you send from must match the address you subscribed with.
@@ -108,13 +107,13 @@ the @amanda.org addresses listed above.**
 
 If the mailing list support is insufficient, or you'd rather just search
 out someone who may provide some degree of commercial support, go to the
-[commercial support page](../_cs).
+[commercial support page](../support/commercial_support).
 
 Some messages (mentioned in the Amanda distribution) about converting
 from the flat file directory structure of amanda-2.4.0 to the tree
 format used after that may be found here:
 
--   [2.4 index conversion](../_240index)
+-   [2.4 index conversion](240index)
 
 ### Amanda contact information
 

@@ -10,3 +10,6 @@ chapter = true
 # Contributors 
 
 * [Zmanda - A BETSOL Company](https://zmanda.com/lightning/)
+
+![https://zmanda.com/lightning/] (../images/Zmanda-Logo1.jpg)
+

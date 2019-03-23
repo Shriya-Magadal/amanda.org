@@ -8,7 +8,7 @@ chapter = true
 +++
 
 # Download Amanda
-PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE ''AS-IS''. UMD and the Amanda contributers are making this work available so that other people can use it. This software is in production use at a number of sites around the world, but we make no warranties that it will work for you. There is no free support available other than users helping each other on the [amanda-users mailing list](../mailing_list). Other support options [can be found here](../_cs).
+PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE ''AS-IS''. UMD and the Amanda contributers are making this work available so that other people can use it. This software is in production use at a number of sites around the world, but we make no warranties that it will work for you. There is no free support available other than users helping each other on the [amanda-users mailing list](../mailing_list). Other support options [can be found here](../support/commercial_support).
 
 #### Binary packages
 To download Amanda binary packages (e.g. RPMs, debian packages, Win32 Windows client) for stable and beta versions for various distributions and source tarball please visit the following page: [http://www.zmanda.com/download-amanda.php](https://www.zmanda.com/download-amanda.php)
@@ -108,4 +108,4 @@ cvs -d:pserver:anonymous@amanda.cvs.sourceforge.net:/cvsroot/amanda co -r <tag_o
 eg. cvs -d:pserver:anonymous@amanda.cvs.sourceforge.net:/cvsroot/amanda co -r amanda-251-branch amanda
 
 #### Patches (Old)
-[Patches for 2.4.5 or prior releases](../_patches)
+[Patches for 2.4.5 or prior releases](./patches)

@@ -7,6 +7,7 @@ chapter = true
 +++
 
 # Release Notes
+---
 
 [Version 3.5](/release/v35)
 
