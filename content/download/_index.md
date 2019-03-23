@@ -8,7 +8,7 @@ chapter = true
 +++
 
 # Download Amanda
-PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE ''AS-IS''. UMD and the Amanda contributers are making this work available so that other people can use it. This software is in production use at a number of sites around the world, but we make no warranties that it will work for you. There is no free support available other than users helping each other on the [amanda-users mailing list](../_mail). Other support options [can be found here](../_cs).
+PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE ''AS-IS''. UMD and the Amanda contributers are making this work available so that other people can use it. This software is in production use at a number of sites around the world, but we make no warranties that it will work for you. There is no free support available other than users helping each other on the [amanda-users mailing list](../mailing_list). Other support options [can be found here](../_cs).
 
 #### Binary packages
 To download Amanda binary packages (e.g. RPMs, debian packages, Win32 Windows client) for stable and beta versions for various distributions and source tarball please visit the following page: [http://www.zmanda.com/download-amanda.php](https://www.zmanda.com/download-amanda.php)
