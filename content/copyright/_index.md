@@ -1,10 +1,10 @@
 +++
 
-title = "Copyright"
+title = "     Copyright"
 date = 2019-03-22T23:34:03+05:30
 weight = 2
 chapter = true
-
+pre = "<i class='far fa-copyright'></i>"
 +++
 
 # Amanda Copyright

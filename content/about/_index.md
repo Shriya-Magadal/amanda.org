@@ -1,9 +1,9 @@
 +++
-toc = "false"
-title = "About"
+title = "     About"
 date = 2019-03-22T23:18:00+05:30
 weight = 1
 chapter = true
+pre = "<i class='fas fa-info-circle'></i>"
 +++
 
 

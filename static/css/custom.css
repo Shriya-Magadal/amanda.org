@@ -275,6 +275,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #sidebar ul.topics > li > a .fa {
     margin-top: 9px;
     color: black;
+    padding: 5rem;
 }
 #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
     background: #F7F7F7;
@@ -308,6 +309,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     overflow: hidden;
     white-space: nowrap;
     display: block;
+    
 }
 #sidebar ul li a:hover {
   color: #FD6C14 ;

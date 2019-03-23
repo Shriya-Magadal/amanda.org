@@ -1,9 +1,9 @@
 +++
-title = "Mailing List"
+title = "     Mailing List"
 date = 2019-03-23T10:20:00+05:30
 weight = 5
 chapter = true
-
+pre = "<i class='far fa-envelope'></i>"
 +++
 
 # Where to get more information about Amanda

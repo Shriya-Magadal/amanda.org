@@ -1,9 +1,10 @@
 +++
 
-title = "Download"
+title = "     Download"
 date = 2019-03-22T23:34:53+05:30
 weight = 3
 chapter = true
+pre = "<i class='far fa-arrow-alt-circle-down'></i>"
 
 +++
 

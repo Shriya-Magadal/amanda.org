@@ -1,9 +1,9 @@
 +++
-title = "IRC Channel"
+title = "     IRC Channel"
 date = 2019-03-22T23:36:05+05:30
 weight = 5
 chapter = true
-
+pre = "<i class='far fa-comments'></i>"
 +++
 
 # Amanda IRC Channel

@@ -1,8 +1,9 @@
 +++
-title = "Release Notes"
+title = "     Release Notes"
 date = 2019-03-23T10:55:19+05:30
 weight = 4
 chapter = true
+pre = "<i class='far fa-file-alt'></i>"
 
 +++
 
