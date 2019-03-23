@@ -7,6 +7,8 @@ draft = false
 hidden = true
 +++
 
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
+
 # Amanda Security Alert - October 5, 2010
 ---
 The Amanda development team has discovered a security vulnerability introduced in Amanda-3.1.2. The vulnerability affects both Amanda servers and clients, and could lead to remote execution of code as the Amanda user.

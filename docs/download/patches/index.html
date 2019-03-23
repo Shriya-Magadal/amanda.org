@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/preview.png" type="image/png">
 
-    <title>Release Notes 2.6 Series :: amanda.org</title>
+    <title>Patches :: amanda.org</title>
 
     
     <link href="../../css/nucleus.css?1553351748" rel="stylesheet">
@@ -33,7 +33,7 @@
     <link href="../../css/custom.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/release/v26/">
+  <body class="" data-url="/download/patches/">
     <nav id="sidebar" class="">
 
 
@@ -219,7 +219,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/download/" title="     Download" class="dd-item 
-        
+        parent
         
         
         ">
@@ -257,7 +257,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/release/" title="     Release Notes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -376,7 +376,7 @@ RU5ErkJggg==" />
  
   
     
-      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item active">
+      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item ">
         <a href="../../release/v26/">
         Release Notes 2.6 Series
         
@@ -573,114 +573,161 @@ RU5ErkJggg==" />
 
 <p><em><sub><sub>Amanda.org is an open source site. Please refer the <a href="./about/_do">TO DO LIST</a> to contribute to this site.</sub></sub></em></p>
 
-<h3 id="release-notes-for-2-6-1p2">Release Notes for 2.6.1p2:</h3>
+<h1 id="the-amanda-patches-page">The AMANDA Patches Page</h1>
 
-<hr />
+<p>This page contains a list of important patches to some of the older
+releases of AMANDA.</p>
+
+<p><em>Please be aware of the fact that the current release of AMANDA is
+2.6.1p2 or higher, so think twice about applying some old patch. We, the
+AMANDA Core Team, strongly recommend to update to the latest stable
+release !!!</em></p>
+
+<p>The links below contain pointers to messages posted to the AMANDA
+mailing lists. Please read the messages for additional information on
+the problems they fix and any additional action you must take for the
+patch to work.</p>
+
+<p>You may use GNU patch in order to apply these patches. It is available
+at <a href="ftp://ftp.gnu.org/pub/gnu">the GNU anonymous FTP site</a> or at any of
+its mirrors, in a file named <code>patch-</code><em>release-number</em><code>.tar.gz</code>.</p>
+
+<p>Most patches are <code>application/x-patch</code> MIME attachments of messages
+posted to AMANDA mailing lists, and this is the recommended form of
+posting patches, because such patches can be downloaded directly from
+the archives (not as of May 23, but eGroups is working to fix the
+problem). Some have been included in the mail text, so you have to click
+on the <code>Source</code> button and save the page. With a bit of luck, you&rsquo;ll be
+able to use the <code>.html</code> file as input for <code>patch</code>, but it may require
+some tweaking. If you cut and paste a patch file from the browser
+window, make sure to run <code>patch -l</code> so that the patch program does not
+get confused because of differences of tabs and spaces.</p>
+
+<p>A <code>-p0</code> or <code>-p1</code> switch has become almost mandatory in latest releases
+of GNU patch; if you don&rsquo;t issue a <code>-p</code> switch, patch may guess
+incorrectly the file to patch, and you&rsquo;ll get rejected junks for files
+such as <code>INSTALL</code> and <code>Makefile.am</code>.</p>
+
+<p>For applying a patch that contain <code>Index:</code> lines, setting the
+environment variable <code>POSIXLY_CORRECT</code> before running the patch command
+may help getting the patch applied without human intervention. Thanks to
+<a href="mailto:&lt;evanc@synapse.net">Evan Champion</a> for pointing this out. A
+detailed explanation of why this helps can be found in the GNU patch
+man-page.</p>
+
+<p>Patches for older releases are no longer listed here.</p>
+
+<h2 id="patches-for-amanda-2-4-5">Patches for AMANDA 2.4.5</h2>
 
 <ul>
-<li>amtapetype: new -p option</li>
-<li>Bug Fixes
+<li><a href="2.4.5/amanda-2.4.5-amoverview.patch">amanda-2.4.5-amoverview.patch</a>:
+This patch by <a href="mailto:&lt;orion@cora.nwra.com">Orion Poplawski</a> adds
+new options to amoverview to toggle new output-columns. The patch
+also includes additions to the amoverview-manpage.</li>
+<li><a href="2.4.5/amanda-2.4.5-planner_incrlargerthantape.patch">amanda-2.4.5-planner_incrlargerthantape.patch</a>:
+This patch by <a href="mailto:&lt;paul.bijnens@xplanation.com">Paul Bijnens</a>
+solves the problem that a delayed-full-because-too-large turns into
+an incremental-also-too-large dump.</li>
+<li><a href="2.4.5/amanda-2.4.5-reporter_notrunchostname.patch">amanda-2.4.5-reporter_notrunchostname.patch</a>:
+This patch by <a href="mailto:&lt;paul.bijnens@xplanation.com">Paul Bijnens</a>
+fixes the truncated columns in AMANDA reports.</li>
+<li><a href="2.4.5/amanda-2.4.5-span_split_V7.2_2.4.5.gz">amanda-2.4.5-span_split_V7.2_2.4.5.gz</a>:
+This patch by <a href="mailto:&lt;building@cs.umd.edu">John Stange</a> adds the
+ability to span DLEs over more than one tape.</li>
+<li><a href="2.4.5/amanda-2.4.5-tcp_wrappers.patch">amanda-2.4.5-tcp_wrappers.patch</a>:
+This patch by <a href="mailto:&lt;michael@weiser.dinsnail.net">Michael Weiser</a>
+adds support for tcp_wrappers (libwrap).</li>
+</ul>
+
+<h2 id="patches-for-amanda-2-4-2p2">Patches for AMANDA 2.4.2p2</h2>
 
 <ul>
-<li>S3 device driver</li>
-<li>amcheckdump</li>
-<li>file not removed from holding disk</li>
-<li>sendbackup compatibility with a 2.4.2 server</li>
-<li>handle EROFS error from tape device</li>
-<li>zfs snapshot name us the diskname</li>
-<li>fix fd allocation in amandad</li>
-<li>crash in amflush</li>
+<li><a href="2.4.2p2/advfs.diff">advfs.patch</a>: This corrects a problem with
+detecting the advfs file system type (e.g. on Irix and Tru64) and
+picking the right dump program to use. It also cleans up some
+problems with linux device name determinations. (Posted on Apr 12,
+2001)</li>
+<li><a href="2.4.2p2/stream_client.diff">stream_client.patch</a>: This corrects a
+problem with amrecover reporting &ldquo;did not get a reserved port&rdquo; when
+&ndash;with-portrange had been used with ./configure. (Posted on Apr 2,
+2002)</li>
+</ul>
+
+<h2 id="patches-for-packages-used-by-amanda">Patches for packages used by AMANDA:</h2>
+
+<ul>
+<li><a href="http://www.egroups.com/group/amanda-hackers/1101.html?">samba2-largefs.patch</a>:
+an update of the patch <code>samba-largefs.patch</code>, distributed with
+AMANDA 2.4.1p1, for Samba up to release 2.0.3. This patch is already
+installed in the Samba CVS tree, so it will no longer be needed in
+newer releases of Samba.</li>
+<li><a href="http://www.egroups.com/group/amanda-users/11432.html?">restore.diff</a>:
+Samba 2.0.2, and probably 2.0.0 too, have trouble when restoring
+files whose sizes are exact multiples of 512 bytes, and may have
+trouble reading from pipes. This patch by <a href="mailto:boehmer@worldnet.att.net">Bob
+Boehmer</a> fixes these problems. Note
+that tar-files produced before this patch are still usable, as the
+problems addressed by this patch are in the restore code only. The
+problem is already fixed in Samba 2.0.3.</li>
+<li><a href="http://www.egroups.com/group/amanda-users/mg2115354892.html?">sambatar.diff</a>:
+Samba 1.9.18p5 up to 1.9.18p10 will print messages to stdout, even
+when asked to create a tar-file and write to stdout. Since AMANDA
+asks SAMBA to create tar-files to stdout, if you do not apply this
+patch in SAMBA, your backups will be useless. Problem reported by
+<a href="mailto:&lt;Ronny.Blomme@elis.rug.ac.be">Ronny Blomme</a>. According to
+<a href="mailto:pfaff@McMaster.CA">Todd Pfaff</a>, this problem is fixed in
+Samba 2.0.0.</li>
+<li><a href="ftp://ftp.AMANDA.org/pub/amanda/maillist-archives/amanda-users/www/users/Apr-Jun.1998/msg00208.html">samba-gtar.diff</a>:
+Samba 1.9.18p4 (and probably previous 1.9.18 versions) won&rsquo;t read
+tar-files with gnutar-style long filenames, even ones produced by
+itself. Patch by <a href="mailto:&lt;rob@devilsthumb.com">Rob Riggs</a>. Fixed in
+Samba 1.9.18p5. (Apr 12, 1998)</li>
+<li>Samba 1.9.17 and higher will print incorrect size information for
+large (&gt; 2GB) filesystems on hosts whose ints are 32bits. If your C
+compiler supports `<code>unsigned long long</code>&rsquo;s and <code>printf()</code> supports
+&ldquo;<code>%llu</code>&rdquo; for printing them, you should apply <code>samba-largefs.patch</code>,
+available in AMANDA distributions since release 2.4.0b5. Anyway,
+beware large SMB filesystems: some MS-Windows hosts were reported
+(in Samba mailing lists) to randomly corrupt such filesystems, but
+then, this has nothing to do with Samba or AMANDA.</li>
+<li>GNU tar 1.12: there are two known problems (described below) that
+can be fixed by applying <code>tar-1.12.patch</code>, available in AMANDA
+distributions since release 2.4.0b5.
+
+<ul>
+<li>On SunOS 4.1.3, HP/UX and possibly other systems, GNU tar 1.12
+will report incorrect output sizes, because printf does not
+understand &ldquo;<code>%llu</code>&rdquo;.</li>
+<li>GNU tar 1.12 would report <code>Bad file number</code> error messages at
+estimate-time for sparse files.</li>
+</ul></li>
+<li>GNU tar 1.13: even though the second problem in release 1.12 is
+already fixed in 1.13, the other is only partially fixed. Besides,
+there are a couple of other problems in release 1.13, related with
+exclude patterns and restoring, so its use is not recommended.
+Hopefully, all of these problems will be fixed in GNU tar 1.14. If
+you want to use something past 1.12,
+<a href="ftp://alpha.gnu.org/pub/gnu/tar/tar-1.13.25.tar.gz">1.13.25</a>
+appears to be stable.</li>
+<li>GNU tar 1.13.18: This <a href="tar-1.13.18.diff">patch</a> fixes two problems
+in tar-1.13.18:
+
+<ul>
+<li>A workaround for a bug in fnmatch from glibc.</li>
+<li>A bug that can cause a core dump.</li>
 </ul></li>
 </ul>
 
-<h3 id="release-notes-for-2-6-1p1">Release Notes for 2.6.1p1:</h3>
+<hr />
+
+<p>This page is maintained by the AMANDA Core Development Team.</p>
+
+<p>Please report changes and/or additions to the
+<a href="mailto:&lt;AMANDA-hackers@AMANDA.org">AMANDA-hackers</a> mailing list.</p>
 
 <hr />
 
-<ul>
-<li>amplot: better output.</li>
-
-<li><p>Don&rsquo;t include genversion.h in distribution tarballs.
-Bug Fixes</p>
-
-<ul>
-<li>S3 device driver</li>
-<li>rait device driver</li>
-<li>amstatus</li>
-<li>configure</li>
-<li>application-api</li>
-<li>compilation on some platform</li>
-<li>others small bug</li>
-</ul></li>
-</ul>
-
-<h3 id="release-notes-for-2-6-1">Release Notes for 2.6.1:</h3>
-
-<hr />
-
-<p>Application API: Allow to easily write wrappers around any backup
-program, See the &lsquo;amanda-applications&rsquo; man page.</p>
-
-<ul>
-<li>amgtar: Use GNU tar, it is a lot more configurable than the GNUTAR
-program. See &lsquo;amgtar&rsquo; man page.</li>
-<li>amstar: Use star to do a backup, it work only on a partition. See
-&lsquo;amstar&rsquo; man page.</li>
-<li>amsamba: Use smbclient to backup a cifs share, see amsamba man page.</li>
-<li>amzfs-sendrecv: Do a backup of a ZFS filesystem with &lsquo;zfs send&rsquo;.</li>
-</ul>
-
-<p>Script API: Allow to run script before and after amanda process, see the
-&lsquo;amanda-scripts&rsquo; man page.</p>
-
-<ul>
-<li>amzfs-snapshot: Do a snapshot of a ZFS filesystem, then &lsquo;amgtar&rsquo;
-application will backup the snapshot. See &lsquo;amzfs-snapshot&rsquo; man page.</li>
-<li>script-email: Simple script to send email. see &lsquo;script-email&rsquo; man
-page.</li>
-</ul>
-
-<p>Changer API v2.0: perl-based changer interface supporting concurrent use
-of multiple devices and changers.</p>
-
-<ul>
-<li>currently operating in &ldquo;compatibility mode,&rdquo; calling old changer
-shell scripts.</li>
-<li>under active development.</li>
-</ul>
-
-<p>Xfer API: generic library to move and filter data with maximal
-efficiency.</p>
-
-<ul>
-<li>can read from and write to arbitrary devices, files, etc.</li>
-<li>only used in some applications.</li>
-</ul>
-
-<p>Amanda archive format: A simple archive format that an application can
-use to create backup image.</p>
-
-<p>&lsquo;amarchiver&rsquo; program to manipulate file in amanda archive format.</p>
-
-<p>Many improvements to report better error message to user.</p>
-
-<p>amtape subcommands &lsquo;slot prev&rsquo; and &lsquo;slot last&rsquo; are removed.</p>
-
-<p>Dozens more perl libraries, with more stable interfaces.</p>
-
-<p>Bug fixes and improvements.</p>
-
-<p>amgetconf &lsquo;&ndash;client&rsquo; option to retrieve config from amanda-client.conf
-on a client.</p>
-
-<p>Amanda configuration file changes</p>
-
-<ul>
-<li>new application-tool section</li>
-<li>new script-tool section</li>
-<li>new device section</li>
-<li>new changer section</li>
-</ul>
+<p>*Last updated: Date: 2014/12/12 18:44:43 *</p>
 
 
 <footer class=" footline" >

@@ -7,6 +7,8 @@ draft = false
 hidden = true
 +++
 
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
+
 Amanda (The Advanced Maryland Automatic Network Disk Archiver) Backup Software
 ---
 Copyright (c) 1991-1998 University of Maryland at College Park All Rights Reserved.

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/preview.png" type="image/png">
 
-    <title>Release Notes 2.6 Series :: amanda.org</title>
+    <title>240index :: amanda.org</title>
 
     
     <link href="../../css/nucleus.css?1553351748" rel="stylesheet">
@@ -33,7 +33,7 @@
     <link href="../../css/custom.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/release/v26/">
+  <body class="" data-url="/mailing_list/240index/">
     <nav id="sidebar" class="">
 
 
@@ -257,7 +257,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/release/" title="     Release Notes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -376,7 +376,7 @@ RU5ErkJggg==" />
  
   
     
-      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item active">
+      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item ">
         <a href="../../release/v26/">
         Release Notes 2.6 Series
         
@@ -438,7 +438,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/mailing_list/" title="     Mailing List" class="dd-item 
-        
+        parent
         
         
         ">
@@ -569,118 +569,16 @@ RU5ErkJggg==" />
         
 
 
-
-
 <p><em><sub><sub>Amanda.org is an open source site. Please refer the <a href="./about/_do">TO DO LIST</a> to contribute to this site.</sub></sub></em></p>
 
-<h3 id="release-notes-for-2-6-1p2">Release Notes for 2.6.1p2:</h3>
+<p>After 2.4.0, the structure of the directory holding the index files was changed to have three levels instead of being flat. This greatly reduces the number of files in a given directory, which was a problem for some systems.
+The new layout is:</p>
 
-<hr />
+<p>[indexdir]/hostname/filesystem/YYYYMMDD<em>L.gz
+where hostname and filesystem are &ldquo;sanitized&rdquo; versions of the names from disklist, i.e. &lsquo;/&rsquo; characters are converted to &lsquo;</em>&rsquo; and so on. This new naming convention matches the one used for the text formatted database.
+A script is available to convert the flat directory structure to the new layout: <a href="../msg00428">msg00428.html</a></p>
 
-<ul>
-<li>amtapetype: new -p option</li>
-<li>Bug Fixes
-
-<ul>
-<li>S3 device driver</li>
-<li>amcheckdump</li>
-<li>file not removed from holding disk</li>
-<li>sendbackup compatibility with a 2.4.2 server</li>
-<li>handle EROFS error from tape device</li>
-<li>zfs snapshot name us the diskname</li>
-<li>fix fd allocation in amandad</li>
-<li>crash in amflush</li>
-</ul></li>
-</ul>
-
-<h3 id="release-notes-for-2-6-1p1">Release Notes for 2.6.1p1:</h3>
-
-<hr />
-
-<ul>
-<li>amplot: better output.</li>
-
-<li><p>Don&rsquo;t include genversion.h in distribution tarballs.
-Bug Fixes</p>
-
-<ul>
-<li>S3 device driver</li>
-<li>rait device driver</li>
-<li>amstatus</li>
-<li>configure</li>
-<li>application-api</li>
-<li>compilation on some platform</li>
-<li>others small bug</li>
-</ul></li>
-</ul>
-
-<h3 id="release-notes-for-2-6-1">Release Notes for 2.6.1:</h3>
-
-<hr />
-
-<p>Application API: Allow to easily write wrappers around any backup
-program, See the &lsquo;amanda-applications&rsquo; man page.</p>
-
-<ul>
-<li>amgtar: Use GNU tar, it is a lot more configurable than the GNUTAR
-program. See &lsquo;amgtar&rsquo; man page.</li>
-<li>amstar: Use star to do a backup, it work only on a partition. See
-&lsquo;amstar&rsquo; man page.</li>
-<li>amsamba: Use smbclient to backup a cifs share, see amsamba man page.</li>
-<li>amzfs-sendrecv: Do a backup of a ZFS filesystem with &lsquo;zfs send&rsquo;.</li>
-</ul>
-
-<p>Script API: Allow to run script before and after amanda process, see the
-&lsquo;amanda-scripts&rsquo; man page.</p>
-
-<ul>
-<li>amzfs-snapshot: Do a snapshot of a ZFS filesystem, then &lsquo;amgtar&rsquo;
-application will backup the snapshot. See &lsquo;amzfs-snapshot&rsquo; man page.</li>
-<li>script-email: Simple script to send email. see &lsquo;script-email&rsquo; man
-page.</li>
-</ul>
-
-<p>Changer API v2.0: perl-based changer interface supporting concurrent use
-of multiple devices and changers.</p>
-
-<ul>
-<li>currently operating in &ldquo;compatibility mode,&rdquo; calling old changer
-shell scripts.</li>
-<li>under active development.</li>
-</ul>
-
-<p>Xfer API: generic library to move and filter data with maximal
-efficiency.</p>
-
-<ul>
-<li>can read from and write to arbitrary devices, files, etc.</li>
-<li>only used in some applications.</li>
-</ul>
-
-<p>Amanda archive format: A simple archive format that an application can
-use to create backup image.</p>
-
-<p>&lsquo;amarchiver&rsquo; program to manipulate file in amanda archive format.</p>
-
-<p>Many improvements to report better error message to user.</p>
-
-<p>amtape subcommands &lsquo;slot prev&rsquo; and &lsquo;slot last&rsquo; are removed.</p>
-
-<p>Dozens more perl libraries, with more stable interfaces.</p>
-
-<p>Bug fixes and improvements.</p>
-
-<p>amgetconf &lsquo;&ndash;client&rsquo; option to retrieve config from amanda-client.conf
-on a client.</p>
-
-<p>Amanda configuration file changes</p>
-
-<ul>
-<li>new application-tool section</li>
-<li>new script-tool section</li>
-<li>new device section</li>
-<li>new changer section</li>
-</ul>
+<p>$ Last updated: $Date: 2002/06/10 15:03:28 $</p>
 
 
 <footer class=" footline" >

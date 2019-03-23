@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/preview.png" type="image/png">
 
-    <title>Release Notes 2.6 Series :: amanda.org</title>
+    <title>Msg00428 :: amanda.org</title>
 
     
     <link href="../../css/nucleus.css?1553351748" rel="stylesheet">
@@ -33,7 +33,7 @@
     <link href="../../css/custom.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/release/v26/">
+  <body class="" data-url="/mailing_list/msg00428/">
     <nav id="sidebar" class="">
 
 
@@ -257,7 +257,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/release/" title="     Release Notes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -376,7 +376,7 @@ RU5ErkJggg==" />
  
   
     
-      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item active">
+      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item ">
         <a href="../../release/v26/">
         Release Notes 2.6 Series
         
@@ -438,7 +438,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/mailing_list/" title="     Mailing List" class="dd-item 
-        
+        parent
         
         
         ">
@@ -573,114 +573,62 @@ RU5ErkJggg==" />
 
 <p><em><sub><sub>Amanda.org is an open source site. Please refer the <a href="./about/_do">TO DO LIST</a> to contribute to this site.</sub></sub></em></p>
 
-<h3 id="release-notes-for-2-6-1p2">Release Notes for 2.6.1p2:</h3>
+<h2 id="storing-index-files-in-a-tree">Storing index files in a tree</h2>
 
 <hr />
 
 <ul>
-<li>amtapetype: new -p option</li>
-<li>Bug Fixes
-
-<ul>
-<li>S3 device driver</li>
-<li>amcheckdump</li>
-<li>file not removed from holding disk</li>
-<li>sendbackup compatibility with a 2.4.2 server</li>
-<li>handle EROFS error from tape device</li>
-<li>zfs snapshot name us the diskname</li>
-<li>fix fd allocation in amandad</li>
-<li>crash in amflush</li>
-</ul></li>
+<li><em>To</em>: <a href="mailto:amanda-users@cs.umd.edu">amanda-users@cs.umd.edu</a></li>
+<li><em>Subject</em>: Storing index files in a tree</li>
+<li><em>From</em>: &ldquo;John R. Jackson&rdquo;
+&lt;<a href="mailto:jrj@gandalf.cc.purdue.edu">jrj@gandalf.cc.purdue.edu</a>&gt;</li>
+<li><em>Date</em>: Thu, 23 Apr 1998 10:57:00 -0500</li>
+<li><em>Reply-to</em>: <a href="mailto:jrj@cc.purdue.edu">jrj@cc.purdue.edu</a></li>
+<li><em>Resent-Date</em>: Thu, 23 Apr 1998 11:57:23 -0400 (EDT)</li>
+<li><em>Resent-From</em>: amanda-users@cs.umd.edu</li>
+<li><em>Resent-Message-ID</em>: &lt;&ldquo;TtAdR.0.1c2.QJsFr&rdquo;@tove.cs.umd.edu&gt;</li>
+<li><em>Resent-Sender</em>: amanda-users-request@cs.umd.edu</li>
 </ul>
-
-<h3 id="release-notes-for-2-6-1p1">Release Notes for 2.6.1p1:</h3>
 
 <hr />
 
-<ul>
-<li>amplot: better output.</li>
+<p>I store my index files on an archive file system.  The current version
+of that software does not handle large directories well (fixed in the
+next release, of course :-).  Some of my index directories contained
+several thousand files and all index operations (amtrmidx, dumper,
+amrecover/amindexd) as well as normal Unix commands were very, very slow.</p>
 
-<li><p>Don&rsquo;t include genversion.h in distribution tarballs.
-Bug Fixes</p>
+<p>This patch changes the index directory from a flat namespace to one
+that matches the text formatted database structure:</p>
 
-<ul>
-<li>S3 device driver</li>
-<li>rait device driver</li>
-<li>amstatus</li>
-<li>configure</li>
-<li>application-api</li>
-<li>compilation on some platform</li>
-<li>others small bug</li>
-</ul></li>
-</ul>
+<p>&hellip;/hostname/filesystem/YYYYMMDD_L.gz</p>
 
-<h3 id="release-notes-for-2-6-1">Release Notes for 2.6.1:</h3>
+<p>With this, I only have roughly &ldquo;tapecycle&rdquo; files in any one directory.</p>
 
-<hr />
+<p>This change has significantly reduced my amdump time (amtrmidx went
+from taking hours to minutes) and the load on the archive server.
+Amrecover is much zippier at startup.</p>
 
-<p>Application API: Allow to easily write wrappers around any backup
-program, See the &lsquo;amanda-applications&rsquo; man page.</p>
+<p>I&rsquo;ve also included the ksh script I used for converting an my existing
+flat index directories to the new structure.  As the comments mention,
+you&rsquo;ll want to change the chown/chmod calls to match your local Amanda
+user/group and ownership conventions, and you may need to change the
+mkdir if your system does not support the -p option (which creates a
+tree no matter how many pieces are missing and does not whine about
+already existing components).</p>
 
-<ul>
-<li>amgtar: Use GNU tar, it is a lot more configurable than the GNUTAR
-program. See &lsquo;amgtar&rsquo; man page.</li>
-<li>amstar: Use star to do a backup, it work only on a partition. See
-&lsquo;amstar&rsquo; man page.</li>
-<li>amsamba: Use smbclient to backup a cifs share, see amsamba man page.</li>
-<li>amzfs-sendrecv: Do a backup of a ZFS filesystem with &lsquo;zfs send&rsquo;.</li>
-</ul>
+<p>To apply my patch, you will first have to apply this patch from Alexandre:</p>
 
-<p>Script API: Allow to run script before and after amanda process, see the
-&lsquo;amanda-scripts&rsquo; man page.</p>
+<p>new patch location</p>
 
-<ul>
-<li>amzfs-snapshot: Do a snapshot of a ZFS filesystem, then &lsquo;amgtar&rsquo;
-application will backup the snapshot. See &lsquo;amzfs-snapshot&rsquo; man page.</li>
-<li>script-email: Simple script to send email. see &lsquo;script-email&rsquo; man
-page.</li>
-</ul>
+<p>It fixes a problem with false matches on the host name in amindexd.
+My patch accomplishes the same thing in a different way.</p>
 
-<p>Changer API v2.0: perl-based changer interface supporting concurrent use
-of multiple devices and changers.</p>
+<p>Since this directory structure matches the text format database, you
+could make &ldquo;indexdir&rdquo; and &ldquo;infofile&rdquo; the same and mix the two if that&rsquo;s
+convenient for your configuration.</p>
 
-<ul>
-<li>currently operating in &ldquo;compatibility mode,&rdquo; calling old changer
-shell scripts.</li>
-<li>under active development.</li>
-</ul>
-
-<p>Xfer API: generic library to move and filter data with maximal
-efficiency.</p>
-
-<ul>
-<li>can read from and write to arbitrary devices, files, etc.</li>
-<li>only used in some applications.</li>
-</ul>
-
-<p>Amanda archive format: A simple archive format that an application can
-use to create backup image.</p>
-
-<p>&lsquo;amarchiver&rsquo; program to manipulate file in amanda archive format.</p>
-
-<p>Many improvements to report better error message to user.</p>
-
-<p>amtape subcommands &lsquo;slot prev&rsquo; and &lsquo;slot last&rsquo; are removed.</p>
-
-<p>Dozens more perl libraries, with more stable interfaces.</p>
-
-<p>Bug fixes and improvements.</p>
-
-<p>amgetconf &lsquo;&ndash;client&rsquo; option to retrieve config from amanda-client.conf
-on a client.</p>
-
-<p>Amanda configuration file changes</p>
-
-<ul>
-<li>new application-tool section</li>
-<li>new script-tool section</li>
-<li>new device section</li>
-<li>new changer section</li>
-</ul>
+<p>John R. Jackson, Technical Software Specialist, jrj@purdue.edu</p>
 
 
 <footer class=" footline" >

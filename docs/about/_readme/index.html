@@ -9,7 +9,7 @@
 
     <link rel="icon" href="../../images/preview.png" type="image/png">
 
-    <title>Release Notes 2.6 Series :: amanda.org</title>
+    <title>_Readme :: amanda.org</title>
 
     
     <link href="../../css/nucleus.css?1553351748" rel="stylesheet">
@@ -33,7 +33,7 @@
     <link href="../../css/custom.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/release/v26/">
+  <body class="" data-url="/about/_readme/">
     <nav id="sidebar" class="">
 
 
@@ -159,7 +159,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/about/" title="     About" class="dd-item 
-        
+        parent
         
         
         ">
@@ -257,7 +257,7 @@ RU5ErkJggg==" />
   
     
     <li data-nav-id="/release/" title="     Release Notes" class="dd-item 
-        parent
+        
         
         
         ">
@@ -376,7 +376,7 @@ RU5ErkJggg==" />
  
   
     
-      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item active">
+      <li data-nav-id="/release/v26/" title="Release Notes 2.6 Series" class="dd-item ">
         <a href="../../release/v26/">
         Release Notes 2.6 Series
         
@@ -573,114 +573,263 @@ RU5ErkJggg==" />
 
 <p><em><sub><sub>Amanda.org is an open source site. Please refer the <a href="./about/_do">TO DO LIST</a> to contribute to this site.</sub></sub></em></p>
 
-<h3 id="release-notes-for-2-6-1p2">Release Notes for 2.6.1p2:</h3>
+<h2 id="amanda-the-advanced-maryland-automatic-network-disk-archiver-backup-software">Amanda (The Advanced Maryland Automatic Network Disk Archiver) Backup Software</h2>
 
-<hr />
+<p>Copyright &copy; 1991-1998 University of Maryland at College Park All Rights Reserved.</p>
+
+<p>PLEASE NOTE: THIS SOFTWARE IS BEING MADE AVAILABLE &ldquo;AS-IS&rdquo;.  We make
+no warranties that it will work for you.  As such there is no support
+available other than users helping each other on the Amanda mailing
+lists or forums. Formal support may be available through vendors.</p>
+
+<h2 id="what-is-amanda">WHAT IS AMANDA?</h2>
+
+<p>Amanda is a backup system designed to backup and archive many
+computers on a network to disk, tape changer/drive or cloud storage.</p>
+
+<p>Here are some features of Amanda:</p>
 
 <ul>
-<li>amtapetype: new -p option</li>
-<li>Bug Fixes
+<li><p>Written in C and Perl.</p></li>
+
+<li><p>Freely distributable source and executable. University of Maryland
+(BSD style) license and GPL.</p></li>
+
+<li><p>Built on top of standard backup software: Unix dump/restore, GNU
+Tar and other archival tools. It is extensible to support new
+archival applications.</p></li>
+
+<li><p>Open file and tape formats. If necessary, you can use standard
+tools like mt and GNU Tar to recover data.</p></li>
+
+<li><p>Backs up 32 and 64 bit Windows machines.</p></li>
+
+<li><p>Will back up multiple machines in parallel to a holding disk. Once
+a dump is complete, Amanda will copy finished dumps one by one to
+virtual tape on a disk or tape as fast as it can.  For example:</p>
 
 <ul>
-<li>S3 device driver</li>
-<li>amcheckdump</li>
-<li>file not removed from holding disk</li>
-<li>sendbackup compatibility with a 2.4.2 server</li>
-<li>handle EROFS error from tape device</li>
-<li>zfs snapshot name us the diskname</li>
-<li>fix fd allocation in amandad</li>
-<li>crash in amflush</li>
+<li><p>A 30 GB backup to virtual tape on disk may take less than 75
+minutes.</p></li>
+
+<li><p>A 41GB backup to AIT5 (25MB/s transfer) may take 40 minutes of
+tape time.</p></li>
 </ul></li>
+
+<li><p>Maintains a catalog of files being backed up and their location on
+the media.</p></li>
+
+<li><p>Does tape management: e.g. Amanda will not overwrite the wrong
+tape.</p></li>
+
+<li><p>For a restore, tells you what tapes you need, and finds the proper
+backup image on the tape for you.</p></li>
+
+<li><p>Supports tape changers via a generic interface.  Easily
+customizable to any type of tape library, carousel, robot,
+stacker, or virtual tape that can be controlled via the unix
+command line.</p></li>
+
+<li><p>Device API provides a pluggable interface to storage
+devices. Bundled drivers support tapes and virtual tapes on disk,
+DVD-RW, RAIT, and Amazon S3. The bundled amvault can then copy to
+removable media for off-site (D2D2T) or cloud storage (D2D2C).</p></li>
+
+<li><p>Supports secure communication between server and client using
+OpenSSH, allowing secure backup of machines in a DMZ or out in the
+Internet.</p></li>
+
+<li><p>Can encrypt backup archives on Amanda client or on Amanda server
+using GPG or any encryption program.</p></li>
+
+<li><p>Can compress backup archives before sending or after sending over
+the network, with compress, gzip or a custom program.</p></li>
+
+<li><p>Supports Kerberos 5 security, including encrypted dumps.</p></li>
+
+<li><p>Recovers gracefully from errors, including down or hung machines.</p></li>
+
+<li><p>Reports results in detail, including all errors, via email.</p></li>
+
+<li><p>Dynamically adjusts the backup schedule to keep within
+constraints: no more juggling by hand when adding disks and
+computers to your network.</p></li>
+
+<li><p>Backup normalization: Amanda schedules full and incremental
+backups so you don&rsquo;t have to, and so as to spread the load across
+the backup cycle. Amanda will intelligently promote a backup level
+in case it is determines that is optimal for resources.</p></li>
+
+<li><p>Includes a pre-run checker program, that conducts sanity checks on
+both the tape server host and all the client hosts (in parallel),
+and will send an e-mail report of any problems that could cause
+the backups to fail.</p></li>
+
+<li><p>IPv6 friendly.</p></li>
+
+<li><p>Runs transparently from cron as needed.</p></li>
+
+<li><p>Span tapes, i.e. if a single backup is too large for one tape,
+Amanda will split it and put the pieces on multiple tapes
+automatically.</p></li>
+
+<li><p>Application API allows custom backups for applications such as
+relational databases, or for special file systems.</p></li>
+
+<li><p>Executes user-provided pre- and post-backup scripts, for,
+e.g. enforcing database referential integrity.</p></li>
+
+<li><p>Award-winning! Including: Linux Journal Readers&rsquo; Choice Award.</p></li>
+
+<li><p>Lots of other options; Amanda is very configurable.</p></li>
 </ul>
 
-<h3 id="release-notes-for-2-6-1p1">Release Notes for 2.6.1p1:</h3>
+<h2 id="what-are-the-system-requirements-for-amanda">WHAT ARE THE SYSTEM REQUIREMENTS FOR AMANDA?</h2>
 
-<hr />
+<p>Amanda requires a host that has access to disks (local, NAS or SAN) or
+a large capacity tape drive or library. All modern tape formats,
+e.g. LTO, EXABYTE, DAT or DLT are supported. This becomes the &ldquo;backup
+server host&rdquo;.  All the computers you are going to backup are the
+&ldquo;backup client hosts&rdquo;.  The server host can also be a client host.</p>
+
+<p>Amanda works best with one or more large &ldquo;holding disk&rdquo; partitions on
+the server host available to it for buffering dumps before writing to
+tape.  The holding disk allows Amanda to run backups in parallel to
+the disk, only writing them to tape when the backup is finished.  Note
+that the holding disk is not required: without it Amanda will run
+backups sequentially to the tape drive.  Running it this way may not
+be optimal for performance, but still allows you to take advantage of
+Amanda&rsquo;s other features.</p>
+
+<p>As a rule of thumb, for best performance the holding disk should be
+larger than the dump output from your largest disk partitions.  For
+example, if you are backing up some terabyte disks that compress down
+to 500 GB, then you&rsquo;ll want at least 500 GB on your holding disk.  On
+the other hand, if those terabyte drives are partitioned into 50 GB
+filesystems, they&rsquo;ll probably compress down to 25 GB and you&rsquo;ll only
+need that much on your holding disk.  Amanda will perform better with
+larger holding disks.</p>
+
+<p>Actually, Amanda will still work if you have full dumps that are
+larger than the holding disk: Amanda will send those dumps directly to
+tape one at a time.  If you have many such dumps you will be limited
+by the dump speed of those machines.</p>
+
+<h2 id="what-systems-does-amanda-run-on">WHAT SYSTEMS DOES AMANDA RUN ON?</h2>
+
+<p>Amanda should run on any modern Unix system that supports dump or GNU
+tar, has sockets and inetd (or a replacement such as xinetd), and
+either system V shared memory, or BSD mmap implemented.</p>
+
+<p>In particular, Amanda has been compiled, and the client side tested on
+the following systems:</p>
 
 <ul>
-<li>amplot: better output.</li>
-
-<li><p>Don&rsquo;t include genversion.h in distribution tarballs.
-Bug Fixes</p>
-
-<ul>
-<li>S3 device driver</li>
-<li>rait device driver</li>
-<li>amstatus</li>
-<li>configure</li>
-<li>application-api</li>
-<li>compilation on some platform</li>
-<li>others small bug</li>
-</ul></li>
+<li>AIX 3.2 and 4.1</li>
+<li>BSDI BSD/OS 2.1 and 3.1</li>
+<li>DEC OSF/1 3.2 and 4.0</li>
+<li>FreeBSD 6, 7 and 8</li>
+<li>GNU/Linux 2.6 on x86, m68k, alpha, sparc, arm and powerpc</li>
+<li>HP-UX 9.x and 10.x (x &gt;= 01)</li>
+<li>IRIX 6.5.2 and up</li>
+<li>NetBSD 1.0</li>
+<li>Nextstep 3 (*)</li>
+<li>OpenBSD 2.5 x86, sparc, etc (ports available)</li>
+<li>Solaris 10</li>
+<li>Ultrix 4.2</li>
+<li>Mac OS X 10</li>
+<li>Windows: XP Pro (Server pack 2), 2003 server, Vista, 2008, server R2, Windows 7 (*)</li>
 </ul>
 
-<h3 id="release-notes-for-2-6-1">Release Notes for 2.6.1:</h3>
+<p>(*) The Amanda server side is known to run on all of the other
+machines except on those marked with an asterisk.</p>
 
-<hr />
+<p>Backup operations can be CPU and Memory intensive (e.g. for
+compression and encryption operations). It is recommended that you
+have a server class CPU in the backup server.</p>
 
-<p>Application API: Allow to easily write wrappers around any backup
-program, See the &lsquo;amanda-applications&rsquo; man page.</p>
+<h2 id="where-do-i-get-amanda">WHERE DO I GET AMANDA?</h2>
 
-<ul>
-<li>amgtar: Use GNU tar, it is a lot more configurable than the GNUTAR
-program. See &lsquo;amgtar&rsquo; man page.</li>
-<li>amstar: Use star to do a backup, it work only on a partition. See
-&lsquo;amstar&rsquo; man page.</li>
-<li>amsamba: Use smbclient to backup a cifs share, see amsamba man page.</li>
-<li>amzfs-sendrecv: Do a backup of a ZFS filesystem with &lsquo;zfs send&rsquo;.</li>
-</ul>
+<p>Amanda, including its source tree, is on SourceForge:</p>
 
-<p>Script API: Allow to run script before and after amanda process, see the
-&lsquo;amanda-scripts&rsquo; man page.</p>
+<pre><code>    http://sourceforge.net/projects/amanda
+</code></pre>
 
-<ul>
-<li>amzfs-snapshot: Do a snapshot of a ZFS filesystem, then &lsquo;amgtar&rsquo;
-application will backup the snapshot. See &lsquo;amzfs-snapshot&rsquo; man page.</li>
-<li>script-email: Simple script to send email. see &lsquo;script-email&rsquo; man
-page.</li>
-</ul>
+<p>Or see
+        <a href="../_download">Downloads</a></p>
 
-<p>Changer API v2.0: perl-based changer interface supporting concurrent use
-of multiple devices and changers.</p>
+<p>Most Linux distributions include amanda rpms or debian packages
+pre-built for various architectures. Pre-built binaries are also
+available at:</p>
 
-<ul>
-<li>currently operating in &ldquo;compatibility mode,&rdquo; calling old changer
-shell scripts.</li>
-<li>under active development.</li>
-</ul>
+<pre><code>    http://www.zmanda.com/download-amanda.php
+</code></pre>
 
-<p>Xfer API: generic library to move and filter data with maximal
-efficiency.</p>
+<h2 id="how-do-i-get-amanda-up-and-running">HOW DO I GET AMANDA UP AND RUNNING?</h2>
 
-<ul>
-<li>can read from and write to arbitrary devices, files, etc.</li>
-<li>only used in some applications.</li>
-</ul>
+<p>Read the file docs/INSTALL.  There are a variety of steps, from
+compiling Amanda to installing it on the backup server host and the
+client machines.</p>
 
-<p>Amanda archive format: A simple archive format that an application can
-use to create backup image.</p>
+<pre><code>docs/INSTALL        contains general installation instructions.
+docs/NEWS           details new features in each release.
+</code></pre>
 
-<p>&lsquo;amarchiver&rsquo; program to manipulate file in amanda archive format.</p>
+<p>You can read Amanda documentation at:</p>
 
-<p>Many improvements to report better error message to user.</p>
+<pre><code>    http://www.amanda.org
+</code></pre>
 
-<p>amtape subcommands &lsquo;slot prev&rsquo; and &lsquo;slot last&rsquo; are removed.</p>
+<p>and at the Amanda wiki:</p>
 
-<p>Dozens more perl libraries, with more stable interfaces.</p>
+<pre><code>    http://wiki.zmanda.com
+</code></pre>
 
-<p>Bug fixes and improvements.</p>
+<h2 id="who-do-i-talk-to-if-i-have-a-problem">WHO DO I TALK TO IF I HAVE A PROBLEM?</h2>
 
-<p>amgetconf &lsquo;&ndash;client&rsquo; option to retrieve config from amanda-client.conf
-on a client.</p>
+<p>You can get Amanda help and questions answered from the mailing lists and
+Amanda forums:</p>
 
-<p>Amanda configuration file changes</p>
+<p>==&gt; To join a mailing list, DO NOT, EVER, send mail to that list.  Send
+    mail to -request@amanda.org, or amanda-lists@amanda.org,
+    with the following line in the body of the message:</p>
 
-<ul>
-<li>new application-tool section</li>
-<li>new script-tool section</li>
-<li>new device section</li>
-<li>new changer section</li>
-</ul>
+<p>subscribe</p>
+
+<p>You will receive an email acknowledging your subscription. Keep
+it. Should you ever wish to depart our company, it has unsubscribe
+and other useful information.</p>
+
+<p>amanda-announce</p>
+
+<p>The amanda-announce mailing list is for important announcements
+related to the Amanda Network Backup Manager package, including new
+versions, contributions, and fixes.  NOTE: the amanda-users list is
+itself on the amanda-announce distribution, so you only need to
+subscribe to one of the two lists, not both.
+To subscribe, send a message to amanda-announce-request@amanda.org.</p>
+
+<p>amanda-users</p>
+
+<p>The amanda-users mailing list is for questions and general discussion
+about the Amanda Network Backup Manager.  NOTE: the amanda-users list
+is itself on the amanda-announce distribution, so you only need to
+subscribe to one of the two lists, not both.
+To subscribe, send a message to amanda-users-request@amanda.org.</p>
+
+<p>amanda-hackers</p>
+
+<p>The amanda-hackers mailing list is for discussion of the
+technical details of the Amanda package, including extensions,
+ports, bugs, fixes, and alpha testing of new versions.
+To subscribe, send a message to amanda-hackers-request@amanda.org.</p>
+
+<p>Amanda forums: <a href="http://forums.zmanda.com">http://forums.zmanda.com</a></p>
+
+<p>Amanda Platform Experts: <a href="http://wiki.zmanda.com/index.php/Platform_Experts">http://wiki.zmanda.com/index.php/Platform_Experts</a></p>
+
+<p>Backup, Share and Enjoy,
+The Amanda Development Team</p>
 
 
 <footer class=" footline" >

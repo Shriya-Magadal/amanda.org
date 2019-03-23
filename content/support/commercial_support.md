@@ -6,6 +6,7 @@ chapter = true
 hidden = true
 +++
 
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
 
 # Commercial support for Amanda
 

@@ -1,9 +1,12 @@
 +++
-title = "Project"
+title = "     Project"
 date = 2019-03-23T14:38:56+05:30
 weight = 6
 chapter = true
+pre = "<i class='far fa-file-code'></i>"
 +++
+
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
 
 # Project
 
