@@ -23,4 +23,4 @@ After maintenance stopped being supported by the [Computer Science Department](h
 Today, Amanda's development is supported by [Zmanda](https://www.zmanda.com/lightning/).
 
 # MORE
-See the [Amanda README](./_readme) for more information.
+See the [Amanda README](/about/_readme) for more information.

@@ -7,9 +7,9 @@ draft = false
 hidden = true
 +++
 
-*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](./about/_do) to contribute to this site.</sub></sub>*
+*<sub><sub>Amanda.org is an open source site. Please refer the [TO DO LIST](/to_do) to contribute to this site.</sub></sub>*
 
-Amanda (The Advanced Maryland Automatic Network Disk Archiver) Backup Software
+## Amanda (The Advanced Maryland Automatic Network Disk Archiver) Backup Software
 ---
 Copyright (c) 1991-1998 University of Maryland at College Park All Rights Reserved.
 
@@ -19,7 +19,7 @@ available other than users helping each other on the Amanda mailing
 lists or forums. Formal support may be available through vendors.
 
 
-WHAT IS AMANDA?
+## What is Amanda?
 ---
 
 Amanda is a backup system designed to backup and archive many
@@ -118,7 +118,7 @@ Here are some features of Amanda:
 
   * Lots of other options; Amanda is very configurable.
 
-WHAT ARE THE SYSTEM REQUIREMENTS FOR AMANDA?
+## What are The System Requirements for Amanda?
 ---
 
 Amanda requires a host that has access to disks (local, NAS or SAN) or
@@ -151,7 +151,7 @@ tape one at a time.  If you have many such dumps you will be limited
 by the dump speed of those machines.
 
 
-WHAT SYSTEMS DOES AMANDA RUN ON?
+## What Systems Does Amanda Run On?
 ---
 
 Amanda should run on any modern Unix system that supports dump or GNU
@@ -184,7 +184,7 @@ compression and encryption operations). It is recommended that you
 have a server class CPU in the backup server.
 
 
-WHERE DO I GET AMANDA?
+## Where Do I Get Amanda?
 ---
 
 Amanda, including its source tree, is on SourceForge:
@@ -192,7 +192,7 @@ Amanda, including its source tree, is on SourceForge:
         http://sourceforge.net/projects/amanda
 
 Or see
-        [Downloads](../_download)
+        [Downloads](/download)
 
 Most Linux distributions include amanda rpms or debian packages
 pre-built for various architectures. Pre-built binaries are also
@@ -200,7 +200,7 @@ available at:
 
         http://www.zmanda.com/download-amanda.php
 
-HOW DO I GET AMANDA UP AND RUNNING?
+## How Do I Get Amanda Up and Running?
 ---
 
 Read the file docs/INSTALL.  There are a variety of steps, from
@@ -218,7 +218,7 @@ and at the Amanda wiki:
 
         http://wiki.zmanda.com
 
-WHO DO I TALK TO IF I HAVE A PROBLEM?
+## Who do I talk to if I have a problem?
 ---
 
 You can get Amanda help and questions answered from the mailing lists and
