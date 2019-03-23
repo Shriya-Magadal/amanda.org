@@ -19,9 +19,9 @@ The latest release in the 3.2.x series is 3.2.3, released on May 9, 2011. It is 
 
 The latest release in the 3.1.x series is 3.1.3, released on October 5, 2010. It is a security release for version 3.1.2.
 
-Amanda-3.1.2 has a <span style="color:red;">known security vulnerability</span>, and all users should upgrade to Amanda-3.1.3 as soon as possible. [See the security alert.](/download/_security)
+Amanda-3.1.2 has a <span style="color:red;">known security vulnerability</span>, and all users should upgrade to Amanda-3.1.3 as soon as possible. [See the security alert.](/download/security)
 
-[Download here!](/download) [(README)](/about/_readme)
+[Download here!](/download) [(README)](/about/readme)
 </span>
 
 <!-- [amanada](_about)
