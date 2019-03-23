@@ -2,7 +2,7 @@
 
 title = "Copyright"
 date = 2019-03-22T23:34:03+05:30
-weight = 5
+weight = 2
 chapter = true
 
 +++

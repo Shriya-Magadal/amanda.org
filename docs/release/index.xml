@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>amanda.org</title>
-    <link>https://shriya-magadal.github.io/</link>
-    <description>Recent content on amanda.org</description>
+    <title>Release Notes on amanda.org</title>
+    <link>https://shriya-magadal.github.io/release/</link>
+    <description>Recent content in Release Notes on amanda.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Mar 2019 23:18:47 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 23 Mar 2019 10:55:19 +0530</lastBuildDate>
     
-	<atom:link href="https://shriya-magadal.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shriya-magadal.github.io/release/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -45,17 +45,6 @@
       
       <guid>https://shriya-magadal.github.io/release/v32/</guid>
       <description>Release Notes for 3.2.3:  fix split arguments and LEOM handling amsuntar: Add SUNTAR-PATH property amstar: Add ACL property amzfs-sendrecv: Implement restore vfs-device (vtapes): LEOM property default to TRUE fix amplot amrecover take correct group when foring amandad with local auth many others small fix  Release Notes for 3.2.2:  Do not restore the NUL padding bytes, some program fail with them Fix driver doing nothing if taper crash early Fix taperalog *FIT no going to second volume Fix amrestore &amp;lsquo;-p&amp;rsquo; not going to next file flush even if flush threshold are not met if it save tape space fix crash in amtrmidx due to memory leak amsamba use &amp;lsquo;Use smbclient -TF&amp;rsquo; for restore  Release Notes for 3.</description>
-    </item>
-    
-    <item>
-      <title>Commercial support for Amanda</title>
-      <link>https://shriya-magadal.github.io/support/commercial_support/</link>
-      <pubDate>Sat, 23 Mar 2019 11:35:51 +0530</pubDate>
-      
-      <guid>https://shriya-magadal.github.io/support/commercial_support/</guid>
-      <description>Commercial support for Amanda We have assembled a list of companies and people who are available to provide some sort of commercial support for amanda. Although Amanda is provided as-is, some consultants and companies have made their services available to provide more support beyond what&amp;rsquo;s available on the mailing lists.
-If you want to be on this list, please Contact us.
-PLEASE NOTE: Companies and Consultants listed on their page are listed solely at their request.</description>
     </item>
     
     <item>
